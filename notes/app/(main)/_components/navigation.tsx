@@ -1,5 +1,5 @@
 //npx convex dev
-//npm run server
+//npm run dev
 
 "use client";
 
