@@ -5,7 +5,7 @@
 
 import { cn } from "@/lib/utils";
 import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { UserItem } from "./useritem";
@@ -17,12 +17,15 @@ import { DocumentList } from "./document-list";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Trashbox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
     const search = useSearch();
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
     const create = useMutation(api.documents.create);
+    const settings = useSettings();
+    const params = useParams();
 
     const isResizingRef = useRef(false);
     const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -125,7 +128,7 @@ export const Navigation = () => {
                 <div>
                     <UserItem />
                     <Item label="Search" icon={Search} isSearch onClick={search.onOpen}/>
-                    <Item label="Settings" icon={Settings} onClick={() => {}}/>
+                    <Item label="Settings" icon={Settings} onClick={settings.onOpen}/>
                     <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
                 </div>
                 <div className="mt-4">
