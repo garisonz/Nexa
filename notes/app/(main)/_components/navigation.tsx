@@ -18,6 +18,7 @@ import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover
 import { Trashbox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
+import { Navbar } from "./navbar";
 
 export const Navigation = () => {
     const search = useSearch();
@@ -147,9 +148,17 @@ export const Navigation = () => {
                 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"/>
             </aside>
             <div ref={navbarRef} className={cn("absolute top-0 z-[99999] left-60 w-[calc(100%-240px)]", isResetting && "transition-all ease-in-out duration-300", isMobile && "left-0 w-full")}>
+                {!!params.documentId ? (
+                    <Navbar 
+                        isCollapsed={isCollapsed}
+                        onResetWidth={resetWidth}
+                    />
+                
+                ) : (
                 <nav className="bg-transparent px-3 py-2 w-full">
                     {isCollapsed && <MenuIcon role="button" onClick={resetWidth} className="h-6 w-6 text-muted-foreground" />}
                 </nav>
+                )}
             </div>
         </>
     );
