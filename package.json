@@ -3,7 +3,10 @@
     "@blocknote/core": "^0.33.0",
     "@blocknote/mantine": "^0.33.0",
     "@blocknote/react": "^0.33.0",
+    "@edgestore/react": "^0.5.3",
+    "@edgestore/server": "^0.5.3",
     "emoji-picker-react": "^4.12.3",
-    "react-textarea-autosize": "^8.5.9"
+    "react-textarea-autosize": "^8.5.9",
+    "zod": "^4.0.5"
   }
 }
