@@ -33,6 +33,11 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/linkify-it": "^5.0.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/mdurl": "^2.0.0",
+    "@types/ms": "^2.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

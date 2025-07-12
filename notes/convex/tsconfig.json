@@ -18,7 +18,11 @@
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    
+    /* Additional options to resolve type definition issues */
+    "types": [],
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["./**/*"],
   "exclude": ["./_generated"]
